@@ -1,14 +1,7 @@
-# Documentation Rule Template
-
-> **Usage**: Used by `/create-general-rules` command. Creates `.cursor/rules/documentation/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-general-rules → .cursor/rules/documentation/RULE.md -->
 ---
 description: Documentation requirements and standards
 ---
-```
 
 # Documentation Standards
 

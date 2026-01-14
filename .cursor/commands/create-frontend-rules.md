@@ -13,5 +13,4 @@ Create UI component and state management standards. Read framework from @.cursor
 
 ## Parameters
 - `/create-frontend-rules react`
-- `/create-frontend-rules vue`
 - `/create-frontend-rules` — use framework from config

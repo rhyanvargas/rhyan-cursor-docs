@@ -1,14 +1,7 @@
-# Testing Rule Template
-
-> **Usage**: Used by `/create-general-rules` command. Creates `.cursor/rules/testing/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-general-rules → .cursor/rules/testing/RULE.md -->
 ---
 description: Testing strategy and patterns for reliable test suites
 ---
-```
 
 # Testing Strategy
 

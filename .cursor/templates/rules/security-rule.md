@@ -1,15 +1,8 @@
-# Security Rule Template
-
-> **Usage**: Used by `/create-general-rules` command. Creates `.cursor/rules/security/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-general-rules → .cursor/rules/security/RULE.md -->
 ---
 description: Security best practices for applications
 alwaysApply: true
 ---
-```
 
 # Security Practices
 

@@ -1,14 +1,7 @@
-# Git Rule Template
-
-> **Usage**: Used by `/create-general-rules` command. Creates `.cursor/rules/git/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-general-rules → .cursor/rules/git/RULE.md -->
 ---
 description: Git workflow and commit conventions
 ---
-```
 
 # Git Workflow
 

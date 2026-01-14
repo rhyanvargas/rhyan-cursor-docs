@@ -1,10 +1,4 @@
-# Infrastructure Rule Template
-
-> **Usage**: Used by `/create-infra-rules` command. Creates `.cursor/rules/infrastructure/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-infra-rules → .cursor/rules/infrastructure/RULE.md -->
 ---
 description: CI/CD and deployment standards
 globs:
@@ -13,7 +7,6 @@ globs:
   - "**/Dockerfile"
   - "**/docker-compose*.yml"
 ---
-```
 
 # Infrastructure Standards
 

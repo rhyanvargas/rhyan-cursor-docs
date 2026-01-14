@@ -1,10 +1,4 @@
-# API Rule Template
-
-> **Usage**: Used by `/create-api-rules` command. Creates `.cursor/rules/api/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-api-rules → .cursor/rules/api/RULE.md -->
 ---
 description: Backend API design patterns and conventions
 globs:
@@ -12,7 +6,6 @@ globs:
   - "**/server/**/*.ts"
   - "**/routes/**/*.ts"
 ---
-```
 
 # API Design Patterns
 

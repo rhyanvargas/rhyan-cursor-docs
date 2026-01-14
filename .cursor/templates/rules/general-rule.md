@@ -1,15 +1,8 @@
-# General Rule Template
-
-> **Usage**: Used by `/create-general-rules` command. Creates `.cursor/rules/general/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-general-rules → .cursor/rules/general/RULE.md -->
 ---
 description: Core coding principles and clean code conventions
 alwaysApply: true
 ---
-```
 
 # General Coding Principles
 

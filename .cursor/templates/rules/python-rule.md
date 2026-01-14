@@ -1,16 +1,9 @@
-# Python Rule Template
-
-> **Usage**: Used by `/create-lang-rules python` command. Creates `.cursor/rules/python/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-lang-rules python → .cursor/rules/python/RULE.md -->
 ---
 description: Python best practices and idioms
 globs:
   - "**/*.py"
 ---
-```
 
 # Python Best Practices
 

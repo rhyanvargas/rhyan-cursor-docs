@@ -1,17 +1,10 @@
-# TypeScript Rule Template
-
-> **Usage**: Used by `/create-lang-rules typescript` command. Creates `.cursor/rules/typescript/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-lang-rules typescript → .cursor/rules/typescript/RULE.md -->
 ---
 description: TypeScript best practices and type safety patterns
 globs:
   - "**/*.ts"
   - "**/*.tsx"
 ---
-```
 
 # TypeScript Best Practices
 

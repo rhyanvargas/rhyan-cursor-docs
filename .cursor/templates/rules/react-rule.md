@@ -1,17 +1,10 @@
-# React Rule Template
-
-> **Usage**: Used by `/create-frontend-rules` command. Creates `.cursor/rules/react/RULE.md`.
-
----
-
-```yaml
+<!-- Template: Used by /create-frontend-rules → .cursor/rules/react/RULE.md -->
 ---
 description: React patterns for scalable frontend development
 globs:
   - "**/*.tsx"
   - "**/*.jsx"
 ---
-```
 
 # React Patterns
 
