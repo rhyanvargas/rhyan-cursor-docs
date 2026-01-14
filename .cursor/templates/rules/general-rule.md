@@ -1,7 +1,15 @@
+# General Rule Template
+
+> **Usage**: Used by `/create-general-rules` command. Creates `.cursor/rules/general/RULE.md`.
+
 ---
-description: Core coding principles and clean code conventions for enterprise development
+
+```yaml
+---
+description: Core coding principles and clean code conventions
 alwaysApply: true
 ---
+```
 
 # General Coding Principles
 
@@ -27,16 +35,10 @@ Write code that is **boring, predictable, and maintainable**. Optimize for reada
 
 ## Code Organization
 
-### Feature-Based Structure (Recommended)
+### {{ORGANIZATION_PATTERN}} Structure
 
-Organize code by feature/domain, not by technical layer. This pattern scales better for enterprise applications and aligns with Domain-Driven Design principles.
-
-**Why feature-based over layer-based:**
-- **Colocation**: Related code lives together (component + hook + API + types)
-- **Scalability**: Folders don't become unmanageable as the app grows
-- **Team ownership**: Features can be owned by different teams
-- **Refactoring**: Easy to extract features into packages or microservices
-- **Deletability**: Remove a feature by deleting its folder
+{{IF feature-based}}
+Organize code by feature/domain, not by technical layer:
 
 ```
 src/
@@ -55,7 +57,23 @@ src/
     hooks/
 ```
 
-**Alternative (small projects):** Layer-based structure (`components/`, `hooks/`, `utils/`) is acceptable for small codebases (<20 components). Migrate to feature-based when complexity grows.
+**Benefits**: Colocation, scalability, team ownership, easy refactoring
+{{/IF}}
+
+{{IF layer-based}}
+Organize code by technical layer:
+
+```
+src/
+  components/
+  hooks/
+  services/
+  utils/
+  types/
+```
+
+**Note**: Consider migrating to feature-based when complexity grows (>20 components)
+{{/IF}}
 
 ### Module Boundaries
 
@@ -82,54 +100,39 @@ src/
 
 ## Error Handling
 
-### Fail Fast, Fail Loud
+### {{ERROR_STRATEGY}}
 
-- Validate inputs at system boundaries (API endpoints, user input)
-- Throw errors early rather than propagating invalid state
-- Never silently swallow errors
-
-### Error Patterns
+{{IF result-types}}
+Use Result types for expected failures, exceptions for unexpected:
 
 ```typescript
-// Use Result types for expected failures
 type Result<T, E = Error> = { success: true; data: T } | { success: false; error: E };
 
 // Use exceptions for unexpected failures
 throw new Error('Descriptive message with context');
-
-// Always include context in error messages
-throw new Error(`Failed to fetch user ${userId}: ${originalError.message}`);
 ```
+{{/IF}}
 
-### Error Boundaries
+{{IF exceptions}}
+Use exceptions with proper error hierarchies:
 
-- Wrap major application sections in error boundaries
-- Log errors with full context before displaying user-friendly messages
-- Never expose internal error details to end users
+```typescript
+class AppError extends Error {
+  constructor(public code: string, message: string) {
+    super(message);
+  }
+}
+```
+{{/IF}}
 
-## Logging and Observability
+### Error Principles
 
-### Structured Logging
+- Validate inputs at system boundaries (API endpoints, user input)
+- Throw errors early rather than propagating invalid state
+- Never silently swallow errors
+- Always include context in error messages
 
-- Use structured logging (JSON format) in production
-- Include correlation IDs for request tracing
-- Log at appropriate levels: ERROR, WARN, INFO, DEBUG
-
-### What to Log
-
-- All API requests/responses (sanitized)
-- Authentication events
-- Business-critical operations
-- Performance metrics for slow operations
-- Errors with full stack traces and context
-
-### What NOT to Log
-
-- Passwords, tokens, API keys
-- PII (personally identifiable information) unless required and encrypted
-- High-frequency events that provide no debugging value
-
-## Code Comments
+## Comments
 
 ### When to Comment
 
@@ -146,30 +149,20 @@ throw new Error(`Failed to fetch user ${userId}: ${originalError.message}`);
 
 ## Dependencies
 
-### Choosing Dependencies
-
 - Prefer well-maintained packages with active communities
 - Check bundle size impact for frontend dependencies
 - Avoid dependencies for trivial functionality
 - Pin versions and use lockfiles
-
-### Managing Dependencies
-
 - Regular security audits (`npm audit`, `pnpm audit`)
-- Update dependencies incrementally, not all at once
-- Document why each major dependency was chosen
 
-## Performance Considerations
+<!-- ================================================================
+     PROJECT-SPECIFIC ADDITIONS
+     ================================================================ -->
 
-- Don't optimize prematurely—measure first
-- Optimize for the common case
-- Use appropriate data structures (Map/Set vs Array for lookups)
-- Consider memory usage for large datasets
-- Implement pagination for lists
+## Project-Specific Patterns
 
-## Configuration
-
-- Use environment variables for environment-specific config
-- Never commit secrets to version control
-- Provide sensible defaults where appropriate
-- Validate configuration at startup, fail fast if invalid
+<!-- Add your team's patterns here:
+- Domain-specific naming conventions
+- Custom error types
+- Specific architectural decisions
+-->
