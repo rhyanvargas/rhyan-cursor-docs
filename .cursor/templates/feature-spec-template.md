@@ -1,159 +1,165 @@
-# Feature Specification Template
+# Feature Specification: {{FEATURE_NAME}}
 
-> **Usage**: This template is used by the `/feature-spec` command. Copy the structure below into the generated spec file.
-
----
-
-## Feature Specification: {{FEATURE_NAME}}
-
-### Metadata
-| Field | Value |
-|-------|-------|
-| **Type** | {{feature \| enhancement \| bugfix \| spike \| chore \| tech debt}} |
-| **Status** | Draft |
-| **Owner / DRI** | {{name}} |
-| **Stakeholders** | {{names}} |
-| **Priority** | {{P0/P1/P2/P3}} |
-| **Timeline** | {{target date/range}} |
-| **Affected area(s)** | {{frontend \| backend \| full-stack \| infra \| docs}} |
+> **Type**: {{FEATURE_TYPE}}  
+> **Target Area**: {{TARGET_AREA}}  
+> **Priority**: {{PRIORITY}}  
+> **Owner**: {{OWNER}}  
+> **Created**: {{DATE}}  
+> **Status**: Draft
 
 ---
 
-### Summary
-{{1–3 sentences: what is being built and why}}
+## Summary
 
-### Problem Statement
-{{What problem are we solving? Who is impacted? Current behavior?}}
-
-### Goals / Success Criteria
-- {{goal 1 – measurable if possible}}
-- {{goal 2}}
-
-### Non-goals / Out of Scope
-- {{explicitly excluded item}}
+{{BRIEF_DESCRIPTION}}
 
 ---
 
-### User Impact
-- **Primary users**: {{who}}
-- **User journey (happy path)**:
-  1. {{step}}
-  2. {{step}}
-- **Edge cases**:
-  - {{case}}
+## Problem Statement
+
+{{PROBLEM_STATEMENT}}
+
+### Business/User Goal
+
+{{MEASURABLE_GOAL}}
 
 ---
 
-### Requirements
+## Success Criteria
 
-#### Functional
-- {{requirement}}
+- [ ] {{CRITERION_1}}
+- [ ] {{CRITERION_2}}
+- [ ] {{CRITERION_3}}
 
-#### Non-functional
+---
+
+## Non-Goals / Out of Scope
+
+- {{NON_GOAL_1}}
+- {{NON_GOAL_2}}
+
+---
+
+## Technical Requirements
+
+### Data Requirements
+
 | Aspect | Details |
 |--------|---------|
-| **Performance** | {{SLOs/constraints}} |
-| **Reliability** | {{retry/backoff, idempotency, SLAs}} |
-| **Security/Privacy** | {{authz/authn, PII handling, encryption, secrets}} |
-| **Compliance** | {{if applicable}} |
-| **Accessibility** | {{if frontend}} |
+| PII Involved | {{PII_YES_NO}} |
+| Data Retention | {{RETENTION_POLICY}} |
+| Storage | {{STORAGE_DETAILS}} |
+
+### API Changes
+
+{{API_CHANGES_OR_NONE}}
+
+### Database Changes
+
+{{DB_CHANGES_OR_NONE}}
+
+### Security & Compliance
+
+- {{SECURITY_CONSTRAINT_1}}
+- {{SECURITY_CONSTRAINT_2}}
+
+### Observability
+
+- Logging: {{LOGGING_REQUIREMENTS}}
+- Metrics: {{METRICS_REQUIREMENTS}}
+- Alerts: {{ALERTING_REQUIREMENTS}}
 
 ---
 
-### Proposed Solution (High-level)
-{{System-level approach; key components and responsibilities}}
+## Implementation Plan
 
-### Detailed Design
+### Phase 1: {{PHASE_1_NAME}}
 
-#### Architecture / Components
-- **{{component}}**: {{responsibility}}
+- [ ] Task 1
+- [ ] Task 2
 
-#### API Design (if applicable)
-- **Endpoints**:
-  - `{{METHOD}} {{PATH}}`: {{purpose}}
-- **Auth**: {{mechanism}}
-- **Error handling**: {{pattern}}
+### Phase 2: {{PHASE_2_NAME}}
 
-#### Data Model / Storage (if applicable)
-- **Schema changes**:
-  - {{table/collection}}: {{change}}
-- **Migration plan**:
-  1. {{step}}
-
-#### Security Considerations
-- {{threat}}: {{mitigation}}
-- **Secrets management**: {{approach}}
-
-#### Observability
-| Type | Details |
-|------|---------|
-| **Logs** | {{what, where, redaction rules}} |
-| **Metrics** | {{counters/timers}} |
-| **Tracing** | {{span boundaries if relevant}} |
-| **Audit** | {{actions needing audit}} |
+- [ ] Task 1
+- [ ] Task 2
 
 ---
 
-### Testing Plan
-- **Unit tests**: {{what}}
-- **Integration tests**: {{what}}
-- **E2E tests** (if applicable): {{what}}
+## Rollout Strategy
 
-### Rollout Plan
-- **Feature flag**: {{yes/no + strategy}}
-- **Deployment steps**:
-  1. {{step}}
-  2. {{step}}
-- **Backout plan**: {{how to revert safely}}
+| Stage | Description | Success Criteria |
+|-------|-------------|------------------|
+| Feature Flag | {{FF_DETAILS}} | {{FF_SUCCESS}} |
+| Canary | {{CANARY_DETAILS}} | {{CANARY_SUCCESS}} |
+| Full Rollout | {{ROLLOUT_DETAILS}} | {{ROLLOUT_SUCCESS}} |
 
-### Risks / Tradeoffs
-| Risk | Mitigation |
-|------|------------|
-| {{risk}} | {{mitigation}} |
+### Backout Plan
+
+{{BACKOUT_PROCEDURE}}
 
 ---
 
-### Discovery & Research (SPIKE only)
-> Include this section only if **Type = spike** or feature is not yet well-defined.
+## Open Questions
 
-#### Research Questions
-- {{question}}
+> Items marked **TBD** above are mirrored here for tracking.
 
-#### Options Considered
-| Option | Description | Fit |
-|--------|-------------|-----|
-| A | {{what}} | {{high-level fit}} |
-| B | {{what}} | {{high-level fit}} |
-| C | {{what}} | {{high-level fit}} |
-
-#### Evaluation Criteria
-- {{criterion 1}}
-- {{criterion 2}}
-
-#### Evaluation Matrix
-| Option | Pros | Cons | Open questions | Fit vs constraints |
-|--------|------|------|----------------|-------------------|
-| A | {{...}} | {{...}} | {{...}} | {{...}} |
-| B | {{...}} | {{...}} | {{...}} | {{...}} |
-
-#### Recommendation / Next Steps
-- **Recommendation**: {{choose option or defer}}
-- **POC plan**: {{what to build/measure}}
-- **Decision deadline**: {{date}}
+| # | Question | Owner | Due Date | Resolution |
+|---|----------|-------|----------|------------|
+| 1 | {{QUESTION_1}} | {{OWNER}} | {{DATE}} | Pending |
 
 ---
 
-### Open Questions
-- {{question 1}}
-- {{question 2}}
+## Sources & References
+
+> Minimum 3 official documentation links required.
+
+| # | Title | URL | Accessed | Relevance |
+|---|-------|-----|----------|-----------|
+| 1 | {{SOURCE_TITLE_1}} | {{SOURCE_URL_1}} | {{ACCESS_DATE_1}} | {{RELEVANCE_1}} |
+| 2 | {{SOURCE_TITLE_2}} | {{SOURCE_URL_2}} | {{ACCESS_DATE_2}} | {{RELEVANCE_2}} |
+| 3 | {{SOURCE_TITLE_3}} | {{SOURCE_URL_3}} | {{ACCESS_DATE_3}} | {{RELEVANCE_3}} |
 
 ---
 
-### Sources (latest docs)
-> Official documentation links required. Each entry must include an access date.
+## Spike Research (if applicable)
 
-| Source | URL | Accessed | Relevance |
-|--------|-----|----------|-----------|
-| {{Title}} | {{URL}} | {{YYYY-MM-DD}} | {{why relevant}} |
-| {{Title}} | {{URL}} | {{YYYY-MM-DD}} | {{why relevant}} |
-| {{Title}} | {{URL}} | {{YYYY-MM-DD}} | {{why relevant}} |
+### Research Questions
+
+1. {{RESEARCH_Q1}}
+2. {{RESEARCH_Q2}}
+3. {{RESEARCH_Q3}}
+
+### Options Evaluated
+
+| Option | Pros | Cons | Fit Score |
+|--------|------|------|-----------|
+| {{OPTION_1}} | {{PROS_1}} | {{CONS_1}} | {{SCORE_1}} |
+| {{OPTION_2}} | {{PROS_2}} | {{CONS_2}} | {{SCORE_2}} |
+
+### Recommendation
+
+{{RECOMMENDATION_OR_DEFERRED}}
+
+### POC Plan (if proceeding)
+
+{{POC_STEPS}}
+
+---
+
+## Approvals
+
+| Role | Name | Date | Status |
+|------|------|------|--------|
+| Engineering | | | Pending |
+| Product | | | Pending |
+| Security | | | Pending (if applicable) |
+
+---
+
+<!-- 
+TEMPLATE USAGE NOTES:
+- Replace all {{PLACEHOLDER}} values with actual content
+- Use "TBD" for unknown values and mirror in Open Questions section
+- Delete sections not applicable (e.g., Spike Research for well-defined features)
+- Ensure minimum 3 sources with access dates
+-->

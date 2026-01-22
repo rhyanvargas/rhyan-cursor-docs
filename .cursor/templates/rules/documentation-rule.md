@@ -1,6 +1,13 @@
 <!-- Template: Used by /create-general-rules → .cursor/rules/documentation/RULE.md -->
 ---
 description: Documentation requirements and standards
+globs:
+  - "**/README.md"
+  - "**/docs/**"
+  - "**/CONTRIBUTING.md"
+  - "**/CHANGELOG.md"
+  - "**/ADR-*.md"
+  - "**/adr/**"
 ---
 
 # Documentation Standards

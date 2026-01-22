@@ -1,6 +1,16 @@
 <!-- Template: Used by /create-general-rules → .cursor/rules/testing/RULE.md -->
 ---
 description: Testing strategy and patterns for reliable test suites
+globs:
+  - "**/*.test.ts"
+  - "**/*.spec.ts"
+  - "**/*.test.tsx"
+  - "**/*.spec.tsx"
+  - "**/*.test.js"
+  - "**/*.spec.js"
+  - "**/test/**"
+  - "**/tests/**"
+  - "**/__tests__/**"
 ---
 
 # Testing Strategy

@@ -76,6 +76,76 @@ A collection of commands, rules, and templates to ground Cursor's AI coding agen
 3. **Templates** contain rule content with `{{placeholders}}`
 4. **Rules** are generated with placeholders replaced by config values
 
+## Template Placeholder System
+
+Templates use a placeholder syntax that the AI agent processes when generating rules.
+
+### Simple Placeholders
+
+Use `{{PLACEHOLDER_NAME}}` for values that come from the project config:
+
+```markdown
+## {{API_STYLE}} Conventions
+
+Your API follows {{API_STYLE}} patterns...
+```
+
+When the AI processes this with `api_style: REST` in the config, it becomes:
+
+```markdown
+## REST Conventions
+
+Your API follows REST patterns...
+```
+
+### Conditional Blocks
+
+Use `{{IF condition}}...{{/IF}}` for content that should only appear based on config values:
+
+```markdown
+{{IF REST}}
+### RESTful URLs
+- Use plural nouns for resources
+- Use kebab-case for multi-word paths
+{{/IF}}
+
+{{IF GraphQL}}
+### GraphQL Conventions
+- Clear type naming
+- Input types for mutations
+{{/IF}}
+```
+
+The AI agent will:
+1. Read the config value (e.g., `api_style: REST`)
+2. Include only the matching conditional block
+3. Remove the `{{IF}}` / `{{/IF}}` markers
+
+### Available Placeholders
+
+| Placeholder | Config Key | Options |
+|-------------|------------|---------|
+| `{{ORGANIZATION_PATTERN}}` | `architecture.organization` | `feature-based`, `layer-based`, `domain-driven` |
+| `{{API_STYLE}}` | `architecture.api_style` | `REST`, `GraphQL`, `tRPC`, `gRPC` |
+| `{{AUTH_PATTERN}}` | `architecture.auth` | `JWT`, `session`, `OAuth-only` |
+| `{{ERROR_STRATEGY}}` | `architecture.error_handling` | `exceptions`, `result-types` |
+| `{{TESTING_STRATEGY}}` | `quality.testing` | `unit-first`, `integration-first`, `e2e-first` |
+| `{{CI_PLATFORM}}` | `quality.ci_cd` | `github-actions`, `gitlab-ci` |
+| `{{MERGE_STRATEGY}}` | `quality.merge_strategy` | `squash`, `rebase`, `merge-commit` |
+| `{{STATE_APPROACH}}` | `stack.state_management` | `local-first`, `redux`, `zustand` |
+
+### Processing Flow
+
+```
+Template + Config → AI Agent → Generated Rule
+
+{{API_STYLE}}     +  REST   →    REST
+{{IF REST}}...    +  REST   →    (content included)
+{{IF GraphQL}}... +  REST   →    (content removed)
+```
+
+---
+
 ## Customization
 
 Generated rules include `<!-- PROJECT-SPECIFIC -->` sections where you can add custom standards. These sections are preserved when regenerating rules.

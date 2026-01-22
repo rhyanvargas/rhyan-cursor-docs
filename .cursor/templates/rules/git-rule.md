@@ -1,6 +1,13 @@
 <!-- Template: Used by /create-general-rules → .cursor/rules/git/RULE.md -->
 ---
 description: Git workflow and commit conventions
+globs:
+  - "**/.github/**"
+  - "**/.gitlab/**"
+  - "**/.gitignore"
+  - "**/CONTRIBUTING.md"
+  - "**/.commitlintrc*"
+  - "**/.husky/**"
 ---
 
 # Git Workflow
