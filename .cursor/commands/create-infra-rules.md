@@ -1,9 +1,16 @@
-# Create Infrastructure Rules
+# Create Infrastructure Rules (Extended)
 
-Create CI/CD and deployment standards. Read CI platform from @.cursor/project-config.yaml or use parameter.
+> **Note**: Agent knows common CI/CD patterns. Only use this if you have project-specific infrastructure conventions.
 
-## Templates
-- @.cursor/templates/rules/infrastructure-rule.md → `.cursor/rules/infrastructure/RULE.md`
+Create CI/CD and deployment standards using extended templates. Read CI platform from @.cursor/project-config.yaml or use parameter.
+
+## Templates (Extended)
+- @.cursor/templates/extended/rules/infrastructure-rule.md → `.cursor/rules/infrastructure/RULE.md`
+
+## When to Use
+- You have custom deployment workflows
+- You need to document specific CI/CD patterns
+- Large teams needing explicit infrastructure standards
 
 ## Steps
 1. Determine CI/CD platform from parameter or config

@@ -1,13 +1,20 @@
-# Create General Rules
+# Create General Rules (Extended)
 
-Create framework-agnostic coding standards using templates. Read project config from @.cursor/project-config.yaml if it exists.
+> **Note**: For most projects, use `/quick-start` instead. This command creates comprehensive rules from the extended templates, which may include patterns Agent already knows.
 
-## Templates
-- @.cursor/templates/rules/general-rule.md → `.cursor/rules/general/RULE.md`
-- @.cursor/templates/rules/git-rule.md → `.cursor/rules/git/RULE.md`
-- @.cursor/templates/rules/security-rule.md → `.cursor/rules/security/RULE.md`
-- @.cursor/templates/rules/testing-rule.md → `.cursor/rules/testing/RULE.md`
-- @.cursor/templates/rules/documentation-rule.md → `.cursor/rules/documentation/RULE.md`
+Create framework-agnostic coding standards using extended templates. Read project config from @.cursor/project-config.yaml if it exists.
+
+## Templates (Extended)
+- @.cursor/templates/extended/rules/general-rule.md → `.cursor/rules/general/RULE.md`
+- @.cursor/templates/extended/rules/git-rule.md → `.cursor/rules/git/RULE.md`
+- @.cursor/templates/extended/rules/security-rule.md → `.cursor/rules/security/RULE.md`
+- @.cursor/templates/extended/rules/testing-rule.md → `.cursor/rules/testing/RULE.md`
+- @.cursor/templates/extended/rules/documentation-rule.md → `.cursor/rules/documentation/RULE.md`
+
+## When to Use
+- Large teams needing comprehensive documentation
+- Enterprise/compliance requirements
+- Code review automation
 
 ## Steps
 1. Read project config for placeholder values

@@ -1,189 +1,236 @@
 # Cursor AI Grounding Kit
 
-A collection of commands, rules, and templates to ground Cursor's AI coding agent with consistent, project-aware context.
+A minimal, best-practices-aligned starter for grounding Cursor's AI agent with project-specific context.
 
-## Features
-
-- **Custom Commands** — Reusable `/slash` commands for project setup and analysis
-- **Rule Templates** — Pre-built coding standards for TypeScript, React, APIs, security, and more
-- **Config-Driven** — Answer questions once, generate consistent rules across your project
-- **Extensible** — Add your own rules and commands following the same patterns
+> **Philosophy**: Per [Cursor's docs](https://cursor.com/docs/context/rules.md), *"Start simple. Add rules only when you notice Agent making the same mistake repeatedly."* Agent already knows common patterns—your rules should focus on what makes YOUR project unique.
 
 ## Quick Start
 
-1. Copy the `.cursor/` folder to your project root
-2. Run `/init-project-config` to capture your architecture decisions
-3. Run the appropriate `/create-*-rules` commands for your stack
-4. Start coding with AI that understands your standards
+### Option 1: Minimal (Recommended)
 
-## Commands
+Copy just what you need:
 
-| Command | Purpose |
-|---------|---------|
-| `/init-project-config` | Capture architecture decisions → config file |
-| `/create-general-rules` | Framework-agnostic standards (5 rules) |
-| `/create-lang-rules` | Language-specific rules (TypeScript, Python) |
-| `/create-frontend-rules` | UI/component standards (React, Vue) |
-| `/create-api-rules` | Backend/API standards (REST, GraphQL) |
-| `/create-infra-rules` | CI/CD and deployment standards |
-| `/analyze-codebase` | Audit code against your rules |
-| `/create-feature-spec` | Generate feature specifications |
+```bash
+# Copy to your project
+cp AGENTS.md your-project/
+# OR
+mkdir -p your-project/.cursor/rules
+cp .cursor/templates/rules/project.mdc your-project/.cursor/rules/
+```
+
+Then fill in YOUR project-specific patterns.
+
+### Option 2: Extended (Enterprise/Large Teams)
+
+For comprehensive coverage, use the extended templates:
+
+```bash
+cp -r .cursor/ your-project/
+# Run commands to generate rules
+/init-project-config
+/create-general-rules
+```
+
+---
+
+## Choosing Your Approach
+
+| Approach | When to Use | Rules Count |
+|----------|-------------|-------------|
+| **Minimal** | Solo/small teams, new projects, rapid iteration | 1 rule + AGENTS.md |
+| **Extended** | Enterprise, large teams, compliance requirements | 10+ rules |
+
+### What NOT to Include in Rules
+
+Per [Cursor best practices](https://cursor.com/docs/context/rules.md):
+
+- ❌ SOLID, KISS, DRY (Agent knows these)
+- ❌ TypeScript/React/Python basics (Agent knows frameworks)
+- ❌ Conventional commits (Agent knows git)
+- ❌ REST/GraphQL conventions (Agent knows APIs)
+- ❌ Testing pyramid (Agent knows testing)
+
+### What TO Include
+
+- ✅ YOUR folder structure and architecture decisions
+- ✅ Internal libraries Agent doesn't know about
+- ✅ Team conventions that DIFFER from defaults
+- ✅ Project-specific security requirements
+- ✅ References to canonical example files
+
+---
 
 ## Project Structure
 
 ```
 .cursor/
-├── commands/           # Slash command definitions
+├── commands/                    # Slash command definitions
 │   ├── init-project-config.md
 │   ├── create-general-rules.md
-│   ├── create-lang-rules.md
-│   ├── create-frontend-rules.md
-│   ├── create-api-rules.md
-│   ├── create-infra-rules.md
 │   ├── analyze-codebase.md
 │   └── create-feature-spec.md
-├── templates/          # Content templates with {{placeholders}}
+├── templates/
+│   ├── rules/
+│   │   └── project.mdc          # ⭐ MINIMAL: One focused rule
+│   ├── extended/
+│   │   └── rules/               # 📚 EXTENDED: Comprehensive templates
+│   │       ├── general-rule.md
+│   │       ├── typescript-rule.md
+│   │       ├── react-rule.md
+│   │       └── ...
 │   ├── project-config.yaml
-│   ├── feature-spec-template.md
-│   └── rules/
-│       ├── general-rule.md
-│       ├── typescript-rule.md
-│       ├── react-rule.md
-│       └── ...
-└── rules/              # Generated rules (output)
-    ├── general/
-    ├── typescript/
-    └── ...
+│   └── feature-spec-template.md
+AGENTS.md                        # ⭐ MINIMAL: Simple alternative
 ```
 
-## How It Works
+---
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│  Commands   │────▶│  Templates  │────▶│    Rules    │
-│  (workflow) │     │  (content)  │     │  (output)   │
-└─────────────┘     └─────────────┘     └─────────────┘
-                           ▲
-                           │
-                    ┌──────┴──────┐
-                    │   Config    │
-                    │ (variables) │
-                    └─────────────┘
+## Minimal Approach
+
+### Using `AGENTS.md`
+
+The simplest option. Place in your project root:
+
+```markdown
+# Project Instructions
+
+## Architecture
+- We organize code by feature, not layer
+- State: Zustand for global, useState for local
+
+## Internal Tools
+- Use `@/lib/auth` for authentication
+- Use `@/lib/api` for API calls
+
+## What to Avoid
+- Don't use Redux (we use Zustand)
+- Don't create new API clients (use @/lib/api)
+
+## Reference Files
+- Components: `src/components/Button.tsx`
+- API routes: `src/app/api/users/route.ts`
 ```
 
-1. **Commands** define the workflow and prompt the AI
-2. **Config** stores your project decisions (from `/init-project-config`)
-3. **Templates** contain rule content with `{{placeholders}}`
-4. **Rules** are generated with placeholders replaced by config values
+### Using `project.mdc`
+
+For more control, use the single rule file at `.cursor/rules/project.mdc`:
+
+```markdown
+---
+description: Project-specific standards
+alwaysApply: true
+---
+
+# Project Standards
+
+## Architecture
+<!-- YOUR specific decisions only -->
+
+## Internal Libraries
+- **Auth**: Use `@/lib/auth` — see @lib/auth/README.md
+- **API Client**: Use `@/lib/api` wrapper
+
+## Reference Files
+@src/components/Button.tsx
+@src/app/api/users/route.ts
+```
+
+---
+
+## Extended Approach
+
+For teams needing comprehensive documentation, use templates in `.cursor/templates/extended/rules/`.
+
+### Commands
+
+| Command | Purpose |
+|---------|---------|
+| `/init-project-config` | Capture architecture decisions |
+| `/create-general-rules` | Generate 5 framework-agnostic rules |
+| `/create-lang-rules` | TypeScript/Python rules |
+| `/create-frontend-rules` | React patterns |
+| `/create-api-rules` | API standards |
+| `/create-infra-rules` | CI/CD standards |
+| `/analyze-codebase` | Audit code against rules |
+| `/create-feature-spec` | Generate feature specs |
+
+### Extended Templates
+
+| Template | Lines | Coverage |
+|----------|-------|----------|
+| `general-rule.md` | 162 | SOLID, naming, error handling |
+| `typescript-rule.md` | 114 | Type safety patterns |
+| `react-rule.md` | 100 | Component patterns |
+| `python-rule.md` | 81 | Python idioms |
+| `api-rule.md` | 119 | REST/GraphQL patterns |
+| `security-rule.md` | 141 | Security best practices |
+| `testing-rule.md` | 146 | Testing strategy |
+| `documentation-rule.md` | 141 | Doc standards |
+| `git-rule.md` | 156 | Git workflow |
+| `infrastructure-rule.md` | 97 | CI/CD patterns |
+
+---
 
 ## Template Placeholder System
 
-Templates use a placeholder syntax that the AI agent processes when generating rules.
+Extended templates use placeholders processed by the AI:
 
 ### Simple Placeholders
 
-Use `{{PLACEHOLDER_NAME}}` for values that come from the project config:
-
 ```markdown
 ## {{API_STYLE}} Conventions
-
-Your API follows {{API_STYLE}} patterns...
 ```
 
-When the AI processes this with `api_style: REST` in the config, it becomes:
-
-```markdown
-## REST Conventions
-
-Your API follows REST patterns...
-```
+Becomes `## REST Conventions` when config has `api_style: REST`.
 
 ### Conditional Blocks
-
-Use `{{IF condition}}...{{/IF}}` for content that should only appear based on config values:
 
 ```markdown
 {{IF REST}}
 ### RESTful URLs
 - Use plural nouns for resources
-- Use kebab-case for multi-word paths
-{{/IF}}
-
-{{IF GraphQL}}
-### GraphQL Conventions
-- Clear type naming
-- Input types for mutations
 {{/IF}}
 ```
 
-The AI agent will:
-1. Read the config value (e.g., `api_style: REST`)
-2. Include only the matching conditional block
-3. Remove the `{{IF}}` / `{{/IF}}` markers
+Only included when config matches.
 
 ### Available Placeholders
 
-| Placeholder | Config Key | Options |
-|-------------|------------|---------|
-| `{{ORGANIZATION_PATTERN}}` | `architecture.organization` | `feature-based`, `layer-based`, `domain-driven` |
-| `{{API_STYLE}}` | `architecture.api_style` | `REST`, `GraphQL`, `tRPC`, `gRPC` |
-| `{{AUTH_PATTERN}}` | `architecture.auth` | `JWT`, `session`, `OAuth-only` |
-| `{{ERROR_STRATEGY}}` | `architecture.error_handling` | `exceptions`, `result-types` |
-| `{{TESTING_STRATEGY}}` | `quality.testing` | `unit-first`, `integration-first`, `e2e-first` |
-| `{{CI_PLATFORM}}` | `quality.ci_cd` | `github-actions`, `gitlab-ci` |
-| `{{MERGE_STRATEGY}}` | `quality.merge_strategy` | `squash`, `rebase`, `merge-commit` |
-| `{{STATE_APPROACH}}` | `stack.state_management` | `local-first`, `redux`, `zustand` |
-
-### Processing Flow
-
-```
-Template + Config → AI Agent → Generated Rule
-
-{{API_STYLE}}     +  REST   →    REST
-{{IF REST}}...    +  REST   →    (content included)
-{{IF GraphQL}}... +  REST   →    (content removed)
-```
+| Placeholder | Options |
+|-------------|---------|
+| `{{API_STYLE}}` | `REST`, `GraphQL`, `tRPC` |
+| `{{AUTH_PATTERN}}` | `JWT`, `session`, `OAuth-only` |
+| `{{TESTING_STRATEGY}}` | `unit-first`, `integration-first`, `e2e-first` |
+| `{{CI_PLATFORM}}` | `github-actions`, `gitlab-ci` |
 
 ---
 
-## Customization
+## Best Practices (from Cursor Docs)
 
-Generated rules include `<!-- PROJECT-SPECIFIC -->` sections where you can add custom standards. These sections are preserved when regenerating rules.
+> *"Keep rules under 500 lines. Split large rules into multiple, composable rules."*
 
-### Adding New Commands
+> *"Provide concrete examples or referenced files. Avoid vague guidance."*
 
-Create a `.md` file in `.cursor/commands/` with:
-- Overview section explaining the command's purpose
-- Steps section with numbered instructions
-- Optional Parameters section for command arguments
+> *"Reference files instead of copying their contents—this keeps rules short and prevents them from becoming stale."*
 
-### Adding New Rule Templates
+### Do
 
-Create a `.md` file in `.cursor/templates/rules/` with:
-- YAML frontmatter (`description`, `globs`, `alwaysApply`)
-- Rule content with `{{PLACEHOLDER}}` syntax
-- `<!-- PROJECT-SPECIFIC -->` section for user additions
+- ✅ Reference canonical example files with `@filename.ts`
+- ✅ Focus on patterns you use frequently
+- ✅ Update rules when Agent makes repeated mistakes
+- ✅ Check rules into git for team sharing
 
-## Recommended Workflow
+### Don't
 
-```bash
-# Initial setup
-/init-project-config          # Answer architecture questions
+- ❌ Copy entire style guides (use a linter)
+- ❌ Document every possible command
+- ❌ Add edge case instructions
+- ❌ Duplicate what's in your codebase
 
-# Generate rules for your stack
-/create-general-rules         # Always run this first
-/create-lang-rules typescript # If using TypeScript
-/create-frontend-rules react  # If using React
-/create-api-rules rest        # If building REST APIs
-
-# Ongoing usage
-/analyze-codebase             # Audit against your rules
-/create-feature-spec          # Document new features
-```
+---
 
 ## Contributing
 
-Contributions welcome! Please:
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
