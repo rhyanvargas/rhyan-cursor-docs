@@ -12,7 +12,7 @@ When working in this codebase:
 
 1. **Explore first** - Scan the codebase to understand existing patterns before suggesting new ones
 2. **Follow established conventions** - Match the style, naming, and structure already in use
-3. **Ask when uncertain** - If architecture decisions aren't clear, ask rather than assume
+3. **Ask when uncertain** - If architecture decisions aren't clear, missing requirements, contain conflicting requiremnts, then ask rather than assume.
 
 ## Architecture
 
