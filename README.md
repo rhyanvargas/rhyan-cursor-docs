@@ -72,6 +72,14 @@ See [Extending](docs/extending.md).
 
 - [Cursor Agent Best Practices](https://cursor.com/blog/agent-best-practices)
 - [Martin Fowler: Understanding SDD](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html)
+- [Tessl](https://tessl.io/) – Agent enablement platform with versioned context and evals
+- [GitHub Spec Kit](https://github.com/github/spec-kit/blob/main/README.md) – Open source spec-driven development toolkit
+- [Microsoft: Diving Into Spec-Driven Development With GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit)
+- [Kiro: Specs Concepts](https://kiro.dev/docs/specs/concepts/) – Requirements, design, and implementation planning
+
+## Source Credits
+
+- [Tessl](https://tessl.io/)
 
 ## License
 
