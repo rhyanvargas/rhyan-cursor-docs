@@ -8,11 +8,28 @@ Write specs, let the agent implement. This starter provides commands, rules, and
 
 ## Quick Start
 
+**Option A – Copy from a local clone**
 ```bash
 # 1. Copy to your project
 cp -r .cursor/ your-project/
 cp -r docs/ your-project/
+```
 
+**Option B – Clone into existing project (won't overwrite existing files)**
+```bash
+# Shallow clone the starter repo into a temp directory (depth 1 = latest commit only)
+git clone --depth 1 https://github.com/rhyanvargas/rhyan-cursor-docs.git /tmp/cursor-starter
+
+# Copy .cursor and docs into current directory; -n = no-clobber (skip existing files)
+cp -rn /tmp/cursor-starter/.cursor ./
+cp -rn /tmp/cursor-starter/docs ./
+
+# Remove the temp clone
+rm -rf /tmp/cursor-starter
+```
+
+**Next steps**
+```bash
 # 2. Open in Cursor and run
 /quick-start
 
