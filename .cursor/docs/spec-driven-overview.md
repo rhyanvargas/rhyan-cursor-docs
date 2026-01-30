@@ -128,7 +128,7 @@ Guidance for effective use:
 
 ## Getting Started
 
-1. **Install**: Copy `.cursor/` and `docs/` to your project
+1. **Install**: Copy `.cursor/` to your project
 2. **Setup**: Run `/quick-start`
 3. **Use**: Follow greenfield or brownfield workflow
 

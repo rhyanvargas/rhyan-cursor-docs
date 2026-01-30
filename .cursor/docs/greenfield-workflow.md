@@ -37,9 +37,9 @@ Begin with a clear description of what you want to build:
 The agent will:
 - Ask clarifying questions if needed
 - Search for related patterns in your codebase
-- Generate a structured spec in `docs/specs/`
+- Generate a structured spec in `.cursor/docs/specs/`
 
-**Output**: `docs/specs/user-authentication.md`
+**Output**: `.cursor/docs/specs/user-authentication.md`
 
 ### 3. Review and refine the spec
 
@@ -54,7 +54,7 @@ Edit the spec directly if needed.
 ### 4. Create an implementation plan (medium/large features)
 
 ```
-/plan-impl docs/specs/user-authentication.md
+/plan-impl .cursor/docs/specs/user-authentication.md
 ```
 
 The agent will:
@@ -70,7 +70,7 @@ Review the plan and adjust if needed.
 ### 5. Implement
 
 ```
-/implement-spec docs/specs/user-authentication.md
+/implement-spec .cursor/docs/specs/user-authentication.md
 ```
 
 Or from the plan:
@@ -88,7 +88,7 @@ The agent will:
 ### 6. Review
 
 ```
-/review --spec docs/specs/user-authentication.md
+/review --spec .cursor/docs/specs/user-authentication.md
 ```
 
 The agent will:

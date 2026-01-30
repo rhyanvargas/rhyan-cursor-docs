@@ -5,12 +5,12 @@ Create an implementation plan from a specification document.
 ## Usage
 
 ```
-/plan-impl docs/specs/{feature-name}.md
+/plan-impl .cursor/docs/specs/{feature-name}.md
 ```
 
 Or reference a spec file:
 ```
-/plan-impl @docs/specs/my-feature.md
+/plan-impl @.cursor/docs/specs/my-feature.md
 ```
 
 ## Behavior
@@ -66,7 +66,7 @@ isProject: false
 
 # {Feature Name}
 
-**Spec**: `docs/specs/{feature-name}.md`
+**Spec**: `.cursor/docs/specs/{feature-name}.md`
 
 ## Prerequisites
 

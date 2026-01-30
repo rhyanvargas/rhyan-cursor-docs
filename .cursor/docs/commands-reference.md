@@ -34,15 +34,15 @@ Generate a specification document from a feature idea.
 ### Behavior
 1. Asks clarifying questions if needed
 2. Searches codebase for context
-3. Generates spec in `docs/specs/{feature-name}.md`
+3. Generates spec in `.cursor/docs/specs/{feature-name}.md`
 
 ### Output
 - Spec file with requirements, constraints, acceptance criteria
-- Location: `docs/specs/`
+- Location: `.cursor/docs/specs/`
 
 ### Options
 - Add context: `/draft-spec "feature" @src/related-file.ts`
-- Specify output: `/draft-spec "feature" --out docs/specs/custom-name.md`
+- Specify output: `/draft-spec "feature" --out .cursor/docs/specs/custom-name.md`
 
 ---
 
@@ -57,8 +57,8 @@ Create an implementation plan from a specification.
 
 ### Examples
 ```
-/plan-impl docs/specs/user-auth.md
-/plan-impl @docs/specs/payment-refactor.md
+/plan-impl .cursor/docs/specs/user-auth.md
+/plan-impl @.cursor/docs/specs/payment-refactor.md
 ```
 
 ### Behavior
@@ -89,7 +89,7 @@ Generate code from a specification or plan.
 ### Usage
 From spec:
 ```
-/implement-spec docs/specs/feature.md
+/implement-spec .cursor/docs/specs/feature.md
 ```
 
 From plan:
@@ -132,7 +132,7 @@ Review specific files:
 
 Review against spec:
 ```
-/review --spec docs/specs/feature.md
+/review --spec .cursor/docs/specs/feature.md
 ```
 
 ### Behavior
@@ -182,7 +182,7 @@ From file:
 
 ### Output
 - Spec file documenting existing behavior
-- Location: `docs/specs/{module}-existing.md`
+- Location: `.cursor/docs/specs/{module}-existing.md`
 
 ### Use Cases
 - Brownfield onboarding
@@ -225,21 +225,21 @@ Initialize the spec-driven workflow for a project.
 
 ### Greenfield Flow
 ```
-/quick-start                           # Setup
-/draft-spec "new feature"              # Spec
-/plan-impl docs/specs/feature.md       # Plan
-/implement-spec docs/specs/feature.md  # Build
-/review --spec docs/specs/feature.md   # Verify
+/quick-start                                    # Setup
+/draft-spec "new feature"                       # Spec
+/plan-impl .cursor/docs/specs/feature.md        # Plan
+/implement-spec .cursor/docs/specs/feature.md   # Build
+/review --spec .cursor/docs/specs/feature.md    # Verify
 ```
 
 ### Brownfield Flow
 ```
-/quick-start                           # Setup
-/extract-spec src/legacy/              # Document
-/draft-spec "change to legacy"         # Spec change
-/plan-impl docs/specs/change.md        # Plan
-/implement-spec docs/specs/change.md   # Build
-/review --spec docs/specs/change.md    # Verify
+/quick-start                                    # Setup
+/extract-spec src/legacy/                       # Document
+/draft-spec "change to legacy"                  # Spec change
+/plan-impl .cursor/docs/specs/change.md         # Plan
+/implement-spec .cursor/docs/specs/change.md    # Build
+/review --spec .cursor/docs/specs/change.md     # Verify
 ```
 
 ### Quick Fix (Skip workflow)
@@ -258,7 +258,7 @@ Initialize the spec-driven workflow for a project.
 
 ### Spec not generated
 - Provide more detail in description
-- Check `docs/specs/` folder exists
+- Check `.cursor/docs/specs/` folder exists
 - Review agent output for errors
 
 ### Plan missing files

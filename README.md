@@ -8,33 +8,38 @@ Write specs, let the agent implement. This starter provides commands, rules, and
 
 ## Quick Start
 
-**Option A – Copy from a local clone**
 ```bash
-# 1. Copy to your project
-cp -r .cursor/ your-project/
-cp -r docs/ your-project/
-```
-
-**Option B – Clone into existing project (won't overwrite existing files)**
-```bash
-# Shallow clone the starter repo into a temp directory (depth 1 = latest commit only)
+# Clone into a temp directory
 git clone --depth 1 https://github.com/rhyanvargas/rhyan-cursor-docs.git /tmp/cursor-starter
 
-# Copy .cursor and docs into current directory; -n = no-clobber (skip existing files)
+# Copy .cursor folder to your project (no-clobber to avoid overwriting)
 cp -rn /tmp/cursor-starter/.cursor ./
-cp -rn /tmp/cursor-starter/docs ./
 
-# Remove the temp clone
+# Clean up
 rm -rf /tmp/cursor-starter
 ```
 
 **Next steps**
 ```bash
-# 2. Open in Cursor and run
+# Open in Cursor and run
 /quick-start
 
-# 3. Start building
+# Start building
 /draft-spec "your feature idea"
+```
+
+## What's Included
+
+Everything lives in `.cursor/` for zero conflicts with your project:
+
+```
+.cursor/
+├── commands/       # Slash commands (/draft-spec, /plan-impl, etc.)
+├── docs/           # Documentation and specs
+│   └── specs/      # Generated specifications
+├── plans/          # Implementation plans
+├── rules/          # Persistent rules
+└── templates/      # Rule templates
 ```
 
 ## Workflows
@@ -45,7 +50,7 @@ rm -rf /tmp/cursor-starter
 | **Brownfield** | Existing code | `/quick-start` → `/extract-spec` → then greenfield flow |
 | **Quick fix** | Trivial changes | Just describe in chat |
 
-See [Greenfield Workflow](docs/greenfield-workflow.md) and [Brownfield Workflow](docs/brownfield-workflow.md).
+See [Greenfield Workflow](.cursor/docs/greenfield-workflow.md) and [Brownfield Workflow](.cursor/docs/brownfield-workflow.md).
 
 ## Commands
 
@@ -58,18 +63,18 @@ See [Greenfield Workflow](docs/greenfield-workflow.md) and [Brownfield Workflow]
 | `/extract-spec` | Document existing code |
 | `/quick-start` | First-time setup |
 
-See [Commands Reference](docs/commands-reference.md).
+See [Commands Reference](.cursor/docs/commands-reference.md).
 
 ## Documentation
 
 | Doc | Purpose |
 |-----|---------|
-| [Getting Started](docs/getting-started.md) | Installation and setup |
-| [Problem Size Guide](docs/problem-size-guide.md) | When to use which workflow |
-| [Spec Writing Guide](docs/spec-writing-guide.md) | Write effective specs |
-| [Extending](docs/extending.md) | Add rules and commands |
-| [Best Practices](docs/best-practices.md) | Tips and references |
-| [Overview](docs/spec-driven-overview.md) | SDD concepts explained |
+| [Getting Started](.cursor/docs/getting-started.md) | Installation and setup |
+| [Problem Size Guide](.cursor/docs/problem-size-guide.md) | When to use which workflow |
+| [Spec Writing Guide](.cursor/docs/spec-writing-guide.md) | Write effective specs |
+| [Extending](.cursor/docs/extending.md) | Add rules and commands |
+| [Best Practices](.cursor/docs/best-practices.md) | Tips and references |
+| [Overview](.cursor/docs/spec-driven-overview.md) | SDD concepts explained |
 
 ## Extending
 
@@ -83,7 +88,7 @@ Add commands for workflows you repeat:
 touch .cursor/commands/my-workflow.md
 ```
 
-See [Extending](docs/extending.md).
+See [Extending](.cursor/docs/extending.md).
 
 ## References
 

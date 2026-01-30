@@ -56,7 +56,7 @@ Just describe the change in chat:
 
 Then skip to implementation:
 ```
-/implement-spec docs/specs/email-validation.md
+/implement-spec .cursor/docs/specs/email-validation.md
 ```
 
 ### Why spec but skip plan?
@@ -79,10 +79,10 @@ Then skip to implementation:
 ### How to handle
 1. `/draft-spec "Add user profile editing feature"`
 2. Review and refine spec
-3. `/plan-impl docs/specs/user-profile.md`
+3. `/plan-impl .cursor/docs/specs/user-profile.md`
 4. Review plan
-5. `/implement-spec docs/specs/user-profile.md`
-6. `/review --spec docs/specs/user-profile.md`
+5. `/implement-spec .cursor/docs/specs/user-profile.md`
+6. `/review --spec .cursor/docs/specs/user-profile.md`
 
 ### Why full workflow?
 - Multiple files = coordination needed

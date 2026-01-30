@@ -51,7 +51,7 @@ The agent will:
 - Generate documentation specs
 - Identify dependencies
 
-**Output**: `docs/specs/{module}-existing.md`
+**Output**: `.cursor/docs/specs/{module}-existing.md`
 
 ### 3. Review and refine
 
@@ -110,7 +110,7 @@ The spec defines:
 For brownfield changes, planning is critical:
 
 ```
-/plan-impl docs/specs/refactor-payment-service.md
+/plan-impl .cursor/docs/specs/refactor-payment-service.md
 ```
 
 The plan identifies:
@@ -122,7 +122,7 @@ The plan identifies:
 ### 4. Implement incrementally
 
 ```
-/implement-spec docs/specs/refactor-payment-service.md
+/implement-spec .cursor/docs/specs/refactor-payment-service.md
 ```
 
 The agent will:
@@ -134,7 +134,7 @@ The agent will:
 ### 5. Verify thoroughly
 
 ```
-/review --spec docs/specs/refactor-payment-service.md
+/review --spec .cursor/docs/specs/refactor-payment-service.md
 ```
 
 Plus:
@@ -212,13 +212,13 @@ Legacy API endpoint needs pagination added.
 
 ### Step 3: Plan and implement
 ```
-/plan-impl docs/specs/users-pagination.md
-/implement-spec docs/specs/users-pagination.md
+/plan-impl .cursor/docs/specs/users-pagination.md
+/implement-spec .cursor/docs/specs/users-pagination.md
 ```
 
 ### Step 4: Review
 ```
-/review --spec docs/specs/users-pagination.md
+/review --spec .cursor/docs/specs/users-pagination.md
 ```
 
 Verify:

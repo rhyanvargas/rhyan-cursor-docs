@@ -40,7 +40,7 @@ Cursor IDE configuration for spec-driven development.
 
 ## Documentation
 
-Full documentation at [/docs](../docs/):
-- [Getting Started](../docs/getting-started.md)
-- [Commands Reference](../docs/commands-reference.md)
-- [Extending](../docs/extending.md)
+Full documentation at [docs/](docs/):
+- [Getting Started](docs/getting-started.md)
+- [Commands Reference](docs/commands-reference.md)
+- [Extending](docs/extending.md)

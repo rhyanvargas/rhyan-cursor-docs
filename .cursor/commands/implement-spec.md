@@ -6,7 +6,7 @@ Generate code from a specification or implementation plan.
 
 From a spec:
 ```
-/implement-spec docs/specs/{feature-name}.md
+/implement-spec .cursor/docs/specs/{feature-name}.md
 ```
 
 From a plan:

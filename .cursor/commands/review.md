@@ -16,7 +16,7 @@ Review specific files:
 
 Review against a spec:
 ```
-/review --spec docs/specs/{feature-name}.md
+/review --spec .cursor/docs/specs/{feature-name}.md
 ```
 
 ## Behavior

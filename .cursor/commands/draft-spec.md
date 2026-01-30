@@ -12,7 +12,7 @@ Generate a specification document from a feature idea or brief description.
 
 1. **Clarify** - Ask clarifying questions if the idea is vague
 2. **Research** - Scan the codebase for relevant context
-3. **Generate** - Create a structured spec in `docs/specs/`
+3. **Generate** - Create a structured spec in `.cursor/docs/specs/`
 4. **Output** - Return the spec for review
 
 ## Spec Structure
@@ -35,7 +35,7 @@ When the user invokes `/draft-spec`:
    - Who is the user?
    - Are there existing patterns to follow?
 3. Search the codebase for related code, patterns, or existing specs
-4. Generate a spec file at `docs/specs/{feature-name}.md`
+4. Generate a spec file at `.cursor/docs/specs/{feature-name}.md`
 5. Use the template below
 
 ## Spec Template
@@ -72,4 +72,4 @@ When the user invokes `/draft-spec`:
 
 After generating the spec:
 - Review and refine the spec
-- Run `/plan-impl docs/specs/{feature-name}.md` to create an implementation plan
+- Run `/plan-impl .cursor/docs/specs/{feature-name}.md` to create an implementation plan

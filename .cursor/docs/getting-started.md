@@ -9,15 +9,14 @@ Set up the spec-driven workflow in your project.
 
 ## Installation
 
-### Option 1: Copy the starter
+### Option 1: Copy from clone
 
 ```bash
 # Clone the starter
 git clone https://github.com/your-org/cursor-spec-driven-starter.git
 
-# Copy .cursor folder to your project
-cp -r cursor-spec-driven-starter/.cursor your-project/
-cp -r cursor-spec-driven-starter/docs your-project/
+# Copy .cursor folder to your project (includes docs)
+cp -rn cursor-spec-driven-starter/.cursor your-project/
 ```
 
 ### Option 2: Manual setup
@@ -25,12 +24,12 @@ cp -r cursor-spec-driven-starter/docs your-project/
 1. Create the folder structure:
    ```
    your-project/
-   ├── .cursor/
-   │   ├── commands/
-   │   ├── rules/
-   │   └── templates/
-   └── docs/
-       └── specs/
+   └── .cursor/
+       ├── commands/
+       ├── docs/
+       │   └── specs/
+       ├── rules/
+       └── templates/
    ```
 
 2. Copy command files to `.cursor/commands/`
@@ -70,10 +69,9 @@ Check that everything is working:
    ```
    .cursor/
    ├── commands/     ✓ 6 files
+   ├── docs/         ✓ documentation + specs/
    ├── rules/        ✓ project.mdc
    └── templates/    ✓ 3 files
-   docs/
-   └── specs/        ✓ ready for specs
    ```
 
 ## Next Steps

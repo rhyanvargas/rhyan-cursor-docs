@@ -24,7 +24,7 @@ Extract spec for specific files:
 1. **Search** - Find relevant code using grep and semantic search
 2. **Analyze** - Understand the code's purpose and behavior
 3. **Document** - Generate a spec describing current functionality
-4. **Output** - Save to `docs/specs/`
+4. **Output** - Save to `.cursor/docs/specs/`
 
 ## Use Cases
 
@@ -51,7 +51,7 @@ When the user invokes `/extract-spec`:
    - What the code does (behavior)
    - How it's used (interfaces)
    - What it depends on (dependencies)
-5. Save to `docs/specs/{module-name}-existing.md`
+5. Save to `.cursor/docs/specs/{module-name}-existing.md`
 
 ## Output Template
 
