@@ -62,6 +62,7 @@ See [Greenfield Workflow](.cursor/docs/greenfield-workflow.md) and [Brownfield W
 | `/review` | After implementation |
 | `/extract-spec` | Document existing code |
 | `/quick-start` | First-time setup |
+| `/update-readme` | Keep README in sync with codebase |
 
 See [Commands Reference](.cursor/docs/commands-reference.md).
 
