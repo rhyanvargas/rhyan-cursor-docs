@@ -32,9 +32,9 @@ rm -rf /tmp/ads
 .cursor/                    # Cursor IDE-specific
 ├── commands/               # Slash commands (/draft-spec, /plan-impl, etc.)
 ├── docs/                   # Documentation and specs
-├── plans/                  # Implementation plans
+├── plans/                  # Implementation plans (output of /plan-impl)
 ├── rules/                  # Persistent rules
-├── skills/ -> .agents/skills  # Symlink to portable skills
+├── skills/                 # Optional symlink → .agents/skills
 └── templates/              # Rule templates
 ```
 
@@ -78,7 +78,10 @@ See [Commands Reference](.cursor/docs/commands-reference.md).
 | Doc | Purpose |
 |-----|---------|
 | [Getting Started](.cursor/docs/getting-started.md) | Installation and setup |
+| [Spec-Driven Overview](.cursor/docs/spec-driven-overview.md) | SDD intro and rationale |
 | [Problem Size Guide](.cursor/docs/problem-size-guide.md) | When to use which workflow |
+| [Greenfield Workflow](.cursor/docs/greenfield-workflow.md) | New features flow |
+| [Brownfield Workflow](.cursor/docs/brownfield-workflow.md) | Existing codebase flow |
 | [Spec Writing Guide](.cursor/docs/spec-writing-guide.md) | Write effective specs |
 | [Extending](.cursor/docs/extending.md) | Add rules and commands |
 | [Best Practices](.cursor/docs/best-practices.md) | Tips and references |
@@ -103,6 +106,8 @@ Create a new skill in `.agents/skills/`:
 ```
 
 ### Add Cursor rules
+
+See [`.cursor/templates/`](.cursor/templates/) for rule templates. Example:
 
 ```bash
 cp .cursor/templates/coding-style.rule.md .cursor/rules/my-style.mdc
