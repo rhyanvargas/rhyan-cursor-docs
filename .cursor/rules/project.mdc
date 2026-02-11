@@ -12,14 +12,14 @@ When working in this codebase:
 
 1. **Explore first** - Scan the codebase to understand existing patterns before suggesting new ones
 2. **Follow established conventions** - Match the style, naming, and structure already in use
-3. **Ask when uncertain** - If architecture decisions aren't clear, missing requirements, contain conflicting requiremnts, then ask rather than assume.
+3. **Ask when uncertain** - If architecture decisions aren't clear, missing requirements, or contain conflicting requirements, ask rather than assume.
 
 ## Architecture
 
 - **Commands** (`.cursor/commands/`): Slash commands for spec-driven workflows
 - **Templates** (`.cursor/templates/`): Rule templates for project customization
-- **Docs** (`docs/`): Modular documentation with single source of truth
-- **Specs** (`docs/specs/`): Generated specification files
+- **Docs** (`.cursor/skills/spec-driven-workflow/references/`): Modular documentation; single source of truth
+- **Specs** (`.cursor/docs/specs/`): Generated specification files
 
 ## Workflow
 
@@ -40,4 +40,4 @@ For brownfield projects, start with `/quick-start` and `/extract-spec`.
 
 ## Commands Reference
 
-See `docs/commands-reference.md` for full command documentation.
+See `skills/spec-driven-workflow/references/commands-reference.md` for full command documentation.

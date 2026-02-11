@@ -20,10 +20,7 @@ Rules live in `.cursor/rules/` and are always loaded.
 
 ### Create a new rule
 
-1. Copy a template from `.cursor/templates/`:
-   ```bash
-   cp .cursor/templates/coding-style.rule.md .cursor/rules/my-style.mdc
-   ```
+1. Open `.cursor/templates/rule-templates.md`, copy the section you need (Architecture, Coding Style, or Project Commands) into a new file `.cursor/rules/my-style.mdc`.
 
 2. Customize for your project
 
@@ -144,21 +141,15 @@ When the user invokes `/migrate-db`:
 
 ## Customizing Templates
 
-Templates in `.cursor/templates/` are used by `/quick-start`.
+`.cursor/templates/rule-templates.md` holds consolidated rule templates. `/quick-start` can merge detected project info with content from these patterns.
 
-### Modify a template
+### Modify templates
 
-1. Edit the template file directly
-2. Changes apply to new projects using `/quick-start`
+Edit `rule-templates.md` and adjust the section(s) you use. Copy updated content into `.cursor/rules/<name>.mdc` as needed.
 
-### Create a new template
+### Add a new template section
 
-1. Add a file to `.cursor/templates/`:
-   ```bash
-   touch .cursor/templates/my-pattern.rule.md
-   ```
-
-2. Reference it in `/quick-start` if needed
+Add a new section to `rule-templates.md` and document what to copy to which rule file.
 
 ---
 

@@ -71,7 +71,7 @@ Check that everything is working:
    ├── commands/     ✓ 6 files
    ├── docs/         ✓ documentation + specs/
    ├── rules/        ✓ project.mdc
-   └── templates/    ✓ 3 files
+   └── templates/    ✓ rule-templates.md
    ```
 
 ## Next Steps

@@ -31,10 +31,10 @@ rm -rf /tmp/ads
 
 .cursor/                    # Cursor IDE-specific
 ├── commands/               # Slash commands (/draft-spec, /plan-impl, etc.)
-├── docs/                   # Documentation and specs
+├── docs/specs/             # Generated specs (output of /draft-spec, /extract-spec)
 ├── plans/                  # Implementation plans (output of /plan-impl)
 ├── rules/                  # Persistent rules
-├── skills/                 # Optional symlink → .agents/skills
+├── skills/                 # Cursor skills (spec-driven-workflow, etc.)
 └── templates/              # Rule templates
 ```
 
@@ -71,20 +71,20 @@ If using Cursor IDE, you get additional features:
 | `/quick-start` | First-time setup |
 | `/update-readme` | Keep README in sync with codebase |
 
-See [Commands Reference](.cursor/docs/commands-reference.md).
+See [Commands Reference](.cursor/skills/spec-driven-workflow/references/commands-reference.md).
 
 ### Documentation
 
 | Doc | Purpose |
 |-----|---------|
-| [Getting Started](.cursor/docs/getting-started.md) | Installation and setup |
-| [Spec-Driven Overview](.cursor/docs/spec-driven-overview.md) | SDD intro and rationale |
-| [Problem Size Guide](.cursor/docs/problem-size-guide.md) | When to use which workflow |
-| [Greenfield Workflow](.cursor/docs/greenfield-workflow.md) | New features flow |
-| [Brownfield Workflow](.cursor/docs/brownfield-workflow.md) | Existing codebase flow |
-| [Spec Writing Guide](.cursor/docs/spec-writing-guide.md) | Write effective specs |
-| [Extending](.cursor/docs/extending.md) | Add rules and commands |
-| [Best Practices](.cursor/docs/best-practices.md) | Tips and references |
+| [Getting Started](.cursor/skills/spec-driven-workflow/references/getting-started.md) | Installation and setup |
+| [Spec-Driven Overview](.cursor/skills/spec-driven-workflow/references/spec-driven-overview.md) | SDD intro and rationale |
+| [Problem Size Guide](.cursor/skills/spec-driven-workflow/references/problem-size-guide.md) | When to use which workflow |
+| [Greenfield Workflow](.cursor/skills/spec-driven-workflow/references/greenfield-workflow.md) | New features flow |
+| [Brownfield Workflow](.cursor/skills/spec-driven-workflow/references/brownfield-workflow.md) | Existing codebase flow |
+| [Spec Writing Guide](.cursor/skills/spec-driven-workflow/references/spec-writing-guide.md) | Write effective specs |
+| [Extending](.cursor/skills/spec-driven-workflow/references/extending.md) | Add rules and commands |
+| [Best Practices](.cursor/skills/spec-driven-workflow/references/best-practices.md) | Tips and references |
 
 ## Available Skills
 
@@ -107,11 +107,7 @@ Create a new skill in `.agents/skills/`:
 
 ### Add Cursor rules
 
-See [`.cursor/templates/`](.cursor/templates/) for rule templates. Example:
-
-```bash
-cp .cursor/templates/coding-style.rule.md .cursor/rules/my-style.mdc
-```
+See [`.cursor/templates/rule-templates.md`](.cursor/templates/rule-templates.md). Copy the section you need to `.cursor/rules/<name>.mdc` and customize.
 
 ### Add Cursor commands
 

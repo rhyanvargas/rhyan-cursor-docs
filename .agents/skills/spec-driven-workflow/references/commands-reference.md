@@ -12,6 +12,7 @@ Complete reference for all spec-driven workflow commands.
 | `/review` | Quality check | After implementation |
 | `/extract-spec` | Document existing code | Brownfield projects |
 | `/quick-start` | Initialize workflow | First-time setup |
+| `/update-readme` | Sync README with codebase | Keep README accurate |
 
 ---
 
@@ -246,6 +247,29 @@ Initialize the spec-driven workflow for a project.
 ```
 "Fix the typo in README.md"            # Direct chat
 ```
+
+---
+
+## /update-readme
+
+Synchronize README.md with current codebase state.
+
+### Usage
+```
+/update-readme
+/update-readme --section tech-stack
+```
+
+### Behavior
+1. Scan codebase (manifests, src, tests, docs)
+2. Compare with README claims
+3. Update sections to match; reference files instead of duplicating content
+4. Verify links and tech stack against actual manifests
+
+### When to Use
+- After adding/removing dependencies or modules
+- When README and code have drifted
+- Before releasing or onboarding
 
 ---
 
