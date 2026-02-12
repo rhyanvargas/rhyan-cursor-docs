@@ -26,8 +26,10 @@ rm -rf /tmp/ads
 
 ```
 .agents/                    # Cross-platform portable content
-└── skills/                 # Reusable skills (ai-elements, etc.)
-    └── ai-elements/        # AI chat component library skill
+└── skills/                 # Reusable skills (portable across tools)
+    ├── spec-driven-workflow/
+    ├── find-skills/
+    └── devops-strategy-facilitator/
 
 .cursor/                    # Cursor IDE-specific
 ├── commands/               # Slash commands (/draft-spec, /plan-impl, etc.)
@@ -90,7 +92,9 @@ See [Commands Reference](.cursor/skills/spec-driven-workflow/references/commands
 
 | Skill | Description |
 |-------|-------------|
-| `ai-elements` | AI chat interface components (shadcn/ui + Vercel AI SDK) |
+| `spec-driven-workflow` | Spec-driven development workflow (greenfield + brownfield) |
+| `find-skills` | Discover and install skills from the open ecosystem |
+| `devops-strategy-facilitator` | Facilitate a concise DevOps strategy design session |
 
 ## Extending
 
